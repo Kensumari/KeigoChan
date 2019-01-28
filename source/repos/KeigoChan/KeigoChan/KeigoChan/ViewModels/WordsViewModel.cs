@@ -12,8 +12,19 @@ namespace KeigoChan.ViewModels
     {
         public ICommand CompletedCommand { get; set; }
         public string CompletedWord { get; set; }
-        public string RespectfulEnding { get; set; }
-        public string HumbleEnding { get; set; }
+        public string RespectfulEnding
+        {
+            get => _respectfulEnding;
+            set => SetProperty(ref _respectfulEnding, value);
+        }
+        public string HumbleEnding
+        {
+            get => _humbleEnding;
+            set => SetProperty(ref _humbleEnding, value);
+        }
+        private string _respectfulEnding;
+        private string _humbleEnding;
+        
 
         public WordsViewModel()
         {
@@ -22,7 +33,7 @@ namespace KeigoChan.ViewModels
 
         private void OnCompleted()
         {
-            var wordCheck = new WordDataStore();
+            IGetWord wordCheck = new WordDataStore();
             RespectfulEnding = wordCheck.GetWord(CompletedWord).RespectfulEnding;
             HumbleEnding = wordCheck.GetWord(CompletedWord).HumbleEnding;
         }
