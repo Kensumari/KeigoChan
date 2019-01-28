@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using KeigoChan.ViewModels;
 
 namespace KeigoChan.Views
 {
@@ -14,13 +15,14 @@ namespace KeigoChan.Views
 	{
 		public WordsPage ()
 		{
-			InitializeComponent ();
+            BindingContext = new WordsViewModel();
+            InitializeComponent ();
 		}
 
-        private void InputWord_Completed(object sender, EventArgs e)
-        {
-            var input = InputWord.Text;
+        //private void InputWord_Completed(object sender, EventArgs e)
+        //{
+        //    var input = InputWord.Text;
 
-        }
+        //}
     }
 }

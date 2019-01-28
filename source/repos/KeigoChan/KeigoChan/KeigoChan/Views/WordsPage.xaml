@@ -4,9 +4,10 @@
              x:Class="KeigoChan.Views.WordsPage">
     <ContentPage.Content>
         <StackLayout>
-            <Entry x:Name="InputWord" Placeholder="書きます" Completed="InputWord_Completed"/>
-            <Label x:Name="RespectfulWord" />
-            <Label x:Name="Humbleword" />
+            <Entry x:Name="InputWord" Placeholder="書きます" Text="{Binding CompletedWord}"/>
+            <Label x:Name="RespectfulWord" Text="{Binding RespectfulEnding}" />
+            <Label x:Name="Humbleword" Text="{Binding HumbleEnding}"/>
+            <Button x:Name="Button" Text="Click me!" Command="{Binding CompletedCommand}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
