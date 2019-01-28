@@ -19,7 +19,8 @@ namespace KeigoChan.Views
 
         private void InputWord_Completed(object sender, EventArgs e)
         {
-            RespectfulWord.Text = 
+            var input = InputWord.Text;
+
         }
     }
 }

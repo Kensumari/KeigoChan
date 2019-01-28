@@ -6,5 +6,6 @@ namespace KeigoChan.ViewModels
 {
     public class KeigoViewModel : BaseViewModel
     {
+
     }
 }
