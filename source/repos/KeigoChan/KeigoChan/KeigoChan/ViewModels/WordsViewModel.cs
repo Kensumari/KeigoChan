@@ -37,5 +37,6 @@ namespace KeigoChan.ViewModels
             RespectfulEnding = wordCheck.GetWord(CompletedWord).RespectfulEnding;
             HumbleEnding = wordCheck.GetWord(CompletedWord).HumbleEnding;
         }
+
     }
 }
