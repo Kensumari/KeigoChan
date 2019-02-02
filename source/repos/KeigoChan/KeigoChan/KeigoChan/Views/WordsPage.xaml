@@ -4,11 +4,14 @@
              x:Class="KeigoChan.Views.WordsPage">
     <ContentPage.Content>
         <StackLayout>
-            <Entry Placeholder="書きます" Text="{Binding CompletedWord}">
+            <Entry Placeholder="書きます" Text="{Binding InputWord}">
                 <Entry.Behaviors>
                     <local:EventToCommandBehavior EventName="Completed" Command="{Binding CompletedCommand}"/>
+                    <local:EventToCommandBehavior EventName="TextChanged" Command="{Binding EnteringCommand}"/>
                 </Entry.Behaviors>
             </Entry>
+            <ListView ItemsSource="{Binding WordList}">
+            </ListView>
             <Label Text="{Binding RespectfulEnding}"/>
             <Label Text="{Binding HumbleEnding}"/>
         </StackLayout>

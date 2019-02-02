@@ -16,14 +16,26 @@ namespace KeigoChan.Services
             words = new List<Word>
             {
                 new Word { JapaneseWord = "iimasu", HumbleEnding = "Iiiiimassuuu", RespectfulEnding = "iiiiimasu" },
+                new Word { JapaneseWord = "iimasen", HumbleEnding = "Iissuuu", RespectfulEnding = "iiisu" },
+                new Word { JapaneseWord = "iimasssen", HumbleEnding = "Iissuuu", RespectfulEnding = "iiisu" },
+                new Word { JapaneseWord = "iimas23en", HumbleEnding = "Iissuuu", RespectfulEnding = "iiisu" },
+                new Word { JapaneseWord = "iimarsen", HumbleEnding = "Iissuuu", RespectfulEnding = "iiisu" },
+                new Word { JapaneseWord = "iimassaen", HumbleEnding = "Iissuuu", RespectfulEnding = "iiisu" },
                 new Word { JapaneseWord = "tabemasu", HumbleEnding = "tabemasuuu", RespectfulEnding = "tabemasuuuuu" },
             };
         }
 
         public Word GetWord(string word)
         {
-            return words.FirstOrDefault(s => s.JapaneseWord == word);
+                return words.FirstOrDefault(s => s.JapaneseWord == word);
         }
 
+        public IEnumerable<string> GetFirstWords()
+        {
+            foreach (var item in words)
+            {
+                yield return item.JapaneseWord;
+            }
+        }
     }
 }

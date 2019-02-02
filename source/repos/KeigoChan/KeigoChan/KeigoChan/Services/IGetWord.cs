@@ -8,5 +8,6 @@ namespace KeigoChan.Services
     public interface IGetWord
     {
         Word GetWord(string word);
+        IEnumerable<string> GetFirstWords();
     }
 }
